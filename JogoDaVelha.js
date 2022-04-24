@@ -66,14 +66,14 @@ function jogada(posicao,posLinha,posColuna) {
 
 function inspetor(locais, inspecionado){
     let ninguemVenceu = true
-    // linhas e colunas
+    // rows and columns
     
     if (locais.length>=3) {
-        // 3 na msm linha
+        // 3 in the same rows
         
-        // organizando por linha
+        // organized by rows
         locais.sort()
-        // comparando cada elemento linha
+        // comparing each element
         for (let i = 0; i <= locais.length-3; i++){
             let n = Number(i)
             if (locais[n][0] == locais[n+1][0] && locais[n+1][0] == locais[n+2][0]){
@@ -82,11 +82,11 @@ function inspetor(locais, inspecionado){
                 vitoria(inspecionado)
             }
         }
-        // 3 na msm coluna
+        // 3 in the same columns
         
-        // organizarndo por coluna
+        // organized by columns
         locais.sort((a,b) => a[1]-b[1])
-        // comaparando cada elemento coluna
+        // comparing each element
         for (let i = 0; i<= locais.length-3; i++){
             let n = Number(i)
             if (locais[n][1] == locais[n+1][1] && locais[n+1][1] == locais[n+2][1]){
@@ -97,9 +97,9 @@ function inspetor(locais, inspecionado){
         }
     }
 
-    // diagonais
+    // diagonals
     
-    // l1c3 l2c2 l3c1
+    // r1c3 r2c2 r3c1
     let segDiagonal1,segDiagonal2,segDiangonal3
     for (let i in locais){
         if(locais[i][0] == 1 && locais[i][1] == 3){
@@ -116,7 +116,7 @@ function inspetor(locais, inspecionado){
         vitoria(inspecionado)
     }
     
-    // 3 linhas == colunas
+    // 3 rows == columns
     locais.sort((a, b) => {
         if (a[0]==a[1]){
             return -1
@@ -125,7 +125,6 @@ function inspetor(locais, inspecionado){
         }
     })
     for (let i = 0;i <= locais.length-3;i++){
-        //let n = i
         if((locais[i][0] == locais[i][1]) && (locais[i+1][0]==locais[i+1][1]) && (locais[i+2][0]== locais[i+2][1])){
             inspecionado.vitorias++
             ninguemVenceu = false
@@ -133,7 +132,7 @@ function inspetor(locais, inspecionado){
         }
     }
 
-    // Velha
+    // tied
     if (jogador1.posição.length + jogador2.posição.length == 9 && ninguemVenceu){
         vitoria()
     }
