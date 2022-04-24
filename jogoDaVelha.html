@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha</title>
+    <link rel="stylesheet" href="jogoDaVelha.css">
+</head>
+<body>
+    
+    <div id="apresentacao">
+
+        <section class="jogador j1">
+            <div id="nome1">
+                <input type="text" id="nameID1" value="NameID">
+            </div>
+            <div id="pontos1">pontos</div>
+            <div id="simbolo1">simbolo</div>
+        </section>
+
+        <section id="tabuleiro">
+            <div class="posicao p1" onclick="jogada(1,1,1)"></div>
+            <div class="posicao p2" onclick="jogada(2,1,2)"></div>
+            <div class="posicao p3" onclick="jogada(3,1,3)"></div>
+            <div class="posicao p4" onclick="jogada(4,2,1)"></div>
+            <div class="posicao p5" onclick="jogada(5,2,2)"></div>
+            <div class="posicao p6" onclick="jogada(6,2,3)"></div>
+            <div class="posicao p7" onclick="jogada(7,3,1)"></div>
+            <div class="posicao p8" onclick="jogada(8,3,2)"></div>
+            <div class="posicao p9" onclick="jogada(9,3,3)"></div>
+        </section>
+        
+        <section class="jogador j2">
+            <div id="nome2">
+                <input type="text" id="nameID2" value="NameID">
+            </div>
+            <div id="pontos2">pontos2</div>
+            <div id="simbolo2">simbolo2</div>
+        </section>
+        
+    </div>
+
+    <div id="rodape" style="text-align: center;"></div>
+
+    <script src="JogoDaVelha.js"></script>
+</body>
+</html>
